@@ -1,0 +1,31 @@
+#include "Contact.h"
+
+Contact::Contact()
+    : mFirstName("")
+    , mLastName("")
+    , mNickname("")
+    , mPhoneNumber("")
+    , mDarkestSecret("")
+{}
+
+void getFieldInput(const std::string& prompt, std::string& field) {
+    std::cout << prompt;
+    while (field == "")
+        std::cin >> field;
+}
+
+void Contact::readUserInput() {
+    getFieldInput("Enter first name: ", mFirstName);
+    getFieldInput("Enter last name: ", mLastName);
+    getFieldInput("Enter nickname: ", mNickname);
+    getFieldInput("Enter phone number: ", mPhoneNumber);
+    getFieldInput("Enter darkest secret: ", mDarkestSecret);
+}
+
+void Contact::printContact() {
+    std::cout << "First name: " << mFirstName << '\n';
+    std::cout << "Last name: " << mLastName << '\n';
+    std::cout << "Nickname: " << mNickname << '\n';
+    std::cout << "Phone number: " << mPhoneNumber << '\n';
+    std::cout << "Darkest secret: " << mDarkestSecret << '\n';
+}

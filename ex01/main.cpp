@@ -3,11 +3,6 @@
 #include <iostream>
 #include <string>
 
-// void    promptUserNonEmpty(std::string& promptStr, std::string& userInput) {
-//     std::cout << promptStr;
-//     std::cin >> userInput;
-// }
-
 int main(int argc, char **argv) {
     if (argc != 1) {
         std::cout << "The program does not accept any arguments." << std::endl;
@@ -17,10 +12,13 @@ int main(int argc, char **argv) {
 
     std::string userInput;
     PhoneBook phonebook;
-    while (1) {
+    while (true) {
         while (userInput != "ADD" && userInput != "SEARCH" && userInput != "EXIT") {
             std::cout << "Enter command (ADD, SEARCH, or EXIT): ";
-            std::getline(std::cin >> std::ws, userInput);
+            if (!std::getline(std::cin >> std::ws, userInput)) {
+                std::cout << "\nEOF received (or input stream error). Exiting program." << std::endl;
+                return 0;
+            };
         }
         if (userInput == "ADD")
             phonebook.addContact();

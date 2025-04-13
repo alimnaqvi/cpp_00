@@ -10,8 +10,12 @@ Contact::Contact()
 
 void getFieldInput(const std::string& prompt, std::string& field) {
     std::cout << prompt;
-    while (field == "")
-        std::getline(std::cin >> std::ws, field);
+    while (field == "") {
+        if (!std::getline(std::cin >> std::ws, field)) {
+            std::cout << "\nEOF received (or input stream error). Exiting program." << std::endl;
+            std::exit(0);
+        }
+    }
 }
 
 void Contact::readUserInput() {

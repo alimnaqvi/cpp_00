@@ -64,7 +64,7 @@ void PhoneBook::displayAll() {
 // }
 
 void handleWhitespace(std::string& str, const std::string& whitespace = " \t\n\r\f\v") {
-    int beginSpace ( str.find_first_of(whitespace) );
+    unsigned int beginSpace ( str.find_first_of(whitespace) );
 
     if (beginSpace != std::string::npos) {
         std::string afterFirstWS = str.substr(beginSpace);
@@ -99,11 +99,11 @@ void PhoneBook::search() {
 
         try { enteredIndex = std::stoi(enteredStr);
         }
-        catch (std::invalid_argument) {
+        catch (std::invalid_argument const&) {
             // std::cout << "Invalid argument (not an integer)." << '\n';
             enteredIndex = 0;
         }
-        catch (std::out_of_range) {
+        catch (std::out_of_range const&) {
             // std::cout << "Our of range (too big for an integer)" << '\n';
             enteredIndex = 0;
         }

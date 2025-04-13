@@ -11,7 +11,7 @@ Contact::Contact()
 void getFieldInput(const std::string& prompt, std::string& field) {
     std::cout << prompt;
     while (field == "")
-        std::cin >> field;
+        std::getline(std::cin >> std::ws, field);
 }
 
 void Contact::readUserInput() {
@@ -20,6 +20,10 @@ void Contact::readUserInput() {
     getFieldInput("Enter nickname: ", mNickname);
     getFieldInput("Enter phone number: ", mPhoneNumber);
     getFieldInput("Enter darkest secret: ", mDarkestSecret);
+
+    // for testing
+    // std::cout << "\nContact created successfully:\n";
+    // printContact();
 }
 
 void Contact::printContact() {

@@ -16,11 +16,11 @@ int main(int argc, char **argv) {
     (void)argv;
 
     std::string userInput;
+    PhoneBook phonebook;
     while (1) {
-        PhoneBook phonebook;
         while (userInput != "ADD" && userInput != "SEARCH" && userInput != "EXIT") {
             std::cout << "Enter command (ADD, SEARCH, or EXIT): ";
-            std::cin >> userInput;
+            std::getline(std::cin >> std::ws, userInput);
         }
         if (userInput == "ADD")
             phonebook.addContact();

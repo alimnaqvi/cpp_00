@@ -2,29 +2,30 @@
 #include <iomanip>
 #include <string>
 
-PhoneBook::PhoneBook() {
-    mNumContacts = 0;
-}
+PhoneBook::PhoneBook()
+    : mNumContacts(0)
+{}
 
 void PhoneBook::addContact() {
     static int  contactIndex;
 
     mContacts[contactIndex].readUserInput();
 
+    // For testing:
+    // std::cout << "Contact created successfully at index "<< contactIndex << " as follows:\n";
+    // mContacts[contactIndex].printContact();
+
     if (contactIndex == 7)
         contactIndex = 0;
     else
         contactIndex++;
 
-    // increment mNumContacts here
+    if (mNumContacts < 8)
+        mNumContacts++;
 
-    // For testing:
-    // std::cout << "Contact created successfully as follows:\n";
-    // contact.printContact();
 }
 
-std::string truncate(const std::string& str)
-{
+std::string truncate(const std::string& str) {
     if (str.length() > 10)
         return str.substr(0, 9) + ".";
     return str;
@@ -39,7 +40,12 @@ void PhoneBook::displayAll() {
               << '|'
               << std::setw(10) << "Last name"
               << '|'
-              << std::setw(10) << "Nickname";
+              << std::setw(10) << "Nickname"
+              << '\n';
+
+    // For testing
+    // std::cout << "mNumContacts is: " << mNumContacts << '\n';
+
     for (int i = 0; i < mNumContacts; i++) {
         std::cout << std::right
                   << std::setw(10) << i + 1

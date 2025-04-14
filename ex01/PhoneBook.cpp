@@ -7,11 +7,12 @@ PhoneBook::PhoneBook()
 void PhoneBook::addContact() {
     static int  contactIndex;
 
+    mContacts[contactIndex].resetAllFields();
     mContacts[contactIndex].readUserInput();
 
     // For testing:
     // std::cout << "Contact created successfully at index "<< contactIndex << " as follows:\n";
-    // mContacts[contactIndex].printContact();
+    // mContacts[contactIndex].printAllFields();
 
     if (contactIndex == 7)
         contactIndex = 0;
@@ -142,5 +143,5 @@ void PhoneBook::search() {
     // for testing
     // std::cout << "enteredIndex is " << enteredIndex << '\n';
 
-    mContacts[enteredIndex - 1].printContact();
+    mContacts[enteredIndex - 1].printAllFields();
 }

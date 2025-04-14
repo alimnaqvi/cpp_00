@@ -8,7 +8,8 @@
 class Contact {
  public:
     Contact();
-    void                printContact();
+    void                resetAllFields();
+    void                printAllFields();
     void                readUserInput();
     const std::string&  getFirstName() { return mFirstName; };
     const std::string&  getLastName() { return mLastName; };

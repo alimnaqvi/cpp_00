@@ -5,14 +5,10 @@ PhoneBook::PhoneBook()
 {}
 
 void PhoneBook::addContact() {
-    static int  contactIndex;
+    static int contactIndex;
 
     mContacts[contactIndex].resetAllFields();
     mContacts[contactIndex].readUserInput();
-
-    // For testing:
-    // std::cout << "Contact created successfully at index "<< contactIndex << " as follows:\n";
-    // mContacts[contactIndex].printAllFields();
 
     if (contactIndex == 7)
         contactIndex = 0;
@@ -21,7 +17,6 @@ void PhoneBook::addContact() {
 
     if (mNumContacts < 8)
         mNumContacts++;
-
 }
 
 std::string truncate(const std::string& str) {
@@ -42,9 +37,6 @@ void PhoneBook::displayAll() {
               << std::setw(10) << "Nickname"
               << '\n';
 
-    // For testing
-    // std::cout << "mNumContacts is: " << mNumContacts << '\n';
-
     for (int i = 0; i < mNumContacts; i++) {
         std::cout << std::right
                   << std::setw(10) << i + 1
@@ -59,23 +51,7 @@ void PhoneBook::displayAll() {
     std::cout << '\n';
 }
 
-// void ignoreLine()
-// {
-//     std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-// }
-
 void trimTrailingWhitespace(std::string& str, const std::string& whitespace = " \t\n\r\f\v") {
-    // unsigned int beginSpace ( str.find_first_of(whitespace) );
-
-    // if (beginSpace != std::string::npos) {
-    //     std::string afterFirstWS = str.substr(beginSpace);
-
-    //     if (afterFirstWS.find_first_not_of(whitespace) != std::string::npos) {
-    //         str = "invalid";
-    //         return;
-    //     }
-    // }
-
     str = str.substr(0, str.find_last_not_of(whitespace) + 1);
 }
 
@@ -87,10 +63,11 @@ void PhoneBook::search() {
 
     displayAll();
 
-    std::string enteredStr ("");
-    int enteredIndex( 0 );
+    std::string enteredStr("");
+    int         enteredIndex(0);
     while (true) {
-        std::cout << "Choose an index to display contact information for (it must be among the above-displayed indexes): ";
+        std::cout << "Choose an index to display contact information for (it must be among the "
+                     "above-displayed indexes): ";
         if (!(std::getline(std::cin >> std::ws, enteredStr))) {
             std::cout << "\nEOF received (or input stream error). Exiting program." << std::endl;
             std::exit(0);
@@ -98,22 +75,8 @@ void PhoneBook::search() {
 
         trimTrailingWhitespace(enteredStr);
 
-        // try {
-        //     enteredIndex = std::stoi(enteredStr);
-        // }
-        // catch (std::invalid_argument const&) {
-        //     // std::cout << "Invalid argument (not an integer)." << '\n';
-        //     enteredIndex = 0;
-        // }
-        // catch (std::out_of_range const&) {
-        //     // std::cout << "Our of range (too big for an integer)" << '\n';
-        //     enteredIndex = 0;
-        // }
-
-        std::stringstream ss ( enteredStr );
-        int tempIndex ( 0 );
-        if (ss >> tempIndex && ss.eof()) {
-            enteredIndex = tempIndex;
+        std::stringstream ss(enteredStr);
+        if (ss >> enteredIndex && ss.eof()) {
             if ((enteredIndex < 1 || enteredIndex > mNumContacts))
                 continue;
             else
@@ -121,27 +84,7 @@ void PhoneBook::search() {
         } else {
             enteredIndex = 0;
         }
-        // if (ss.fail())
-        //     enteredIndex = 0;
-        // else {
-        //     char remainingChar;
-        //     if (ss >> remainingChar)
-        //         enteredIndex = 0;
-        // }
-
-        
     }
-
-    // int enteredIndex( 0 );
-    // while (enteredIndex < 1 || enteredIndex > mNumContacts) {
-    //     std::cout << "Choose an index to display contact information for (it must be among the above-displayed indexes): ";
-    //     std::cin >> enteredIndex;
-    //     std::cin.clear();
-    //     ignoreLine();
-    // }
-
-    // for testing
-    // std::cout << "enteredIndex is " << enteredIndex << '\n';
 
     mContacts[enteredIndex - 1].printAllFields();
 }

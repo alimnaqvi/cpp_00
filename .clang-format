@@ -1,0 +1,15 @@
+BasedOnStyle: Google
+IndentWidth: 4
+TabWidth: 4
+UseTab: Never # Or 'Always', 'ForIndentation', 'ForContinuationAndIndentation' - choose one and be consistent
+ColumnLimit: 100 # Or 80, 120 - depends on preference/team standard
+AccessModifierOffset: -2 # Indent private/public/protected less than class members
+AlignConsecutiveAssignments: true
+AlignConsecutiveDeclarations: true
+AllowShortFunctionsOnASingleLine: None # Generally better for readability
+AllowShortIfStatementsOnASingleLine: Never
+AllowShortLoopsOnASingleLine: false
+# Cpp11BracedListStyle: true # Use C++11 braced initialization style formatting { ... }
+SortIncludes: false # true will keep includes tidy
+BreakConstructorInitializers: BeforeComma
+ConstructorInitializerAllOnOneLineOrOnePerLine: false

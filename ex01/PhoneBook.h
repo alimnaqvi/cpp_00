@@ -7,11 +7,12 @@
 #include <sstream>
 
 class PhoneBook {
- public:
+  public:
     PhoneBook();
-    void    addContact();
-    void    search();
- private:
+    void addContact();
+    void search();
+
+  private:
     Contact mContacts[8];
     int     mNumContacts;
     void    displayAll();

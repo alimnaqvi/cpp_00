@@ -6,22 +6,23 @@
 #include <cstdlib>
 
 class Contact {
- public:
+  public:
     Contact();
-    void                resetAllFields();
-    void                printAllFields();
-    void                readUserInput();
-    const std::string&  getFirstName() { return mFirstName; };
-    const std::string&  getLastName() { return mLastName; };
-    const std::string&  getNickname() { return mNickname; };
-    const std::string&  getPhoneNumber() { return mPhoneNumber; };
-    const std::string&  getDarkestSecret() { return mDarkestSecret; };
- private:
-    std::string  mFirstName;
-    std::string  mLastName;
-    std::string  mNickname;
-    std::string  mPhoneNumber;
-    std::string  mDarkestSecret;
+    void               resetAllFields();
+    void               printAllFields();
+    void               readUserInput();
+    const std::string& getFirstName();
+    const std::string& getLastName();
+    const std::string& getNickname();
+    const std::string& getPhoneNumber();
+    const std::string& getDarkestSecret();
+
+  private:
+    std::string mFirstName;
+    std::string mLastName;
+    std::string mNickname;
+    std::string mPhoneNumber;
+    std::string mDarkestSecret;
 };
 
 #endif

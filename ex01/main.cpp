@@ -11,14 +11,15 @@ int main(int argc, char **argv) {
     (void)argv;
 
     std::string userInput;
-    PhoneBook phonebook;
+    PhoneBook   phonebook;
     while (true) {
         while (userInput != "ADD" && userInput != "SEARCH" && userInput != "EXIT") {
             std::cout << "Enter command (ADD, SEARCH, or EXIT): ";
             if (!std::getline(std::cin >> std::ws, userInput)) {
-                std::cout << "\nEOF received (or input stream error). Exiting program." << std::endl;
+                std::cout << "\nEOF received (or input stream error). Exiting program."
+                          << std::endl;
                 return 0;
-            };
+            }
         }
         if (userInput == "ADD")
             phonebook.addContact();

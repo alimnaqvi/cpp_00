@@ -9,11 +9,19 @@ Contact::Contact()
 {}
 
 void Contact::resetAllFields() {
-    mFirstName = "";
-    mLastName = "";
-    mNickname = "";
-    mPhoneNumber = "";
+    mFirstName     = "";
+    mLastName      = "";
+    mNickname      = "";
+    mPhoneNumber   = "";
     mDarkestSecret = "";
+}
+
+void Contact::printAllFields() {
+    std::cout << "First name: " << mFirstName << '\n';
+    std::cout << "Last name: " << mLastName << '\n';
+    std::cout << "Nickname: " << mNickname << '\n';
+    std::cout << "Phone number: " << mPhoneNumber << '\n';
+    std::cout << "Darkest secret: " << mDarkestSecret << '\n';
 }
 
 void getFieldInput(const std::string& prompt, std::string& field) {
@@ -32,16 +40,24 @@ void Contact::readUserInput() {
     getFieldInput("Enter nickname: ", mNickname);
     getFieldInput("Enter phone number: ", mPhoneNumber);
     getFieldInput("Enter darkest secret: ", mDarkestSecret);
-
-    // for testing
-    // std::cout << "\nContact created successfully:\n";
-    // printContact();
 }
 
-void Contact::printAllFields() {
-    std::cout << "First name: " << mFirstName << '\n';
-    std::cout << "Last name: " << mLastName << '\n';
-    std::cout << "Nickname: " << mNickname << '\n';
-    std::cout << "Phone number: " << mPhoneNumber << '\n';
-    std::cout << "Darkest secret: " << mDarkestSecret << '\n';
+const std::string& Contact::getFirstName() {
+    return mFirstName;
+}
+
+const std::string& Contact::getLastName() {
+    return mLastName;
+}
+
+const std::string& Contact::getNickname() {
+    return mNickname;
+}
+
+const std::string& Contact::getPhoneNumber() {
+    return mPhoneNumber;
+}
+
+const std::string& Contact::getDarkestSecret() {
+    return mDarkestSecret;
 }

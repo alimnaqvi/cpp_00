@@ -63,17 +63,17 @@ void PhoneBook::displayAll() {
 //     std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 // }
 
-void handleWhitespace(std::string& str, const std::string& whitespace = " \t\n\r\f\v") {
-    unsigned int beginSpace ( str.find_first_of(whitespace) );
+void trimTrailingWhitespace(std::string& str, const std::string& whitespace = " \t\n\r\f\v") {
+    // unsigned int beginSpace ( str.find_first_of(whitespace) );
 
-    if (beginSpace != std::string::npos) {
-        std::string afterFirstWS = str.substr(beginSpace);
+    // if (beginSpace != std::string::npos) {
+    //     std::string afterFirstWS = str.substr(beginSpace);
 
-        if (afterFirstWS.find_first_not_of(whitespace) != std::string::npos) {
-            str = "invalid";
-            return;
-        }
-    }
+    //     if (afterFirstWS.find_first_not_of(whitespace) != std::string::npos) {
+    //         str = "invalid";
+    //         return;
+    //     }
+    // }
 
     str = str.substr(0, str.find_last_not_of(whitespace) + 1);
 }
@@ -95,23 +95,40 @@ void PhoneBook::search() {
             std::exit(0);
         }
 
-        handleWhitespace(enteredStr);
+        trimTrailingWhitespace(enteredStr);
 
-        try { enteredIndex = std::stoi(enteredStr);
-        }
-        catch (std::invalid_argument const&) {
-            // std::cout << "Invalid argument (not an integer)." << '\n';
+        // try {
+        //     enteredIndex = std::stoi(enteredStr);
+        // }
+        // catch (std::invalid_argument const&) {
+        //     // std::cout << "Invalid argument (not an integer)." << '\n';
+        //     enteredIndex = 0;
+        // }
+        // catch (std::out_of_range const&) {
+        //     // std::cout << "Our of range (too big for an integer)" << '\n';
+        //     enteredIndex = 0;
+        // }
+
+        std::stringstream ss ( enteredStr );
+        int tempIndex ( 0 );
+        if (ss >> tempIndex && ss.eof()) {
+            enteredIndex = tempIndex;
+            if ((enteredIndex < 1 || enteredIndex > mNumContacts))
+                continue;
+            else
+                break;
+        } else {
             enteredIndex = 0;
         }
-        catch (std::out_of_range const&) {
-            // std::cout << "Our of range (too big for an integer)" << '\n';
-            enteredIndex = 0;
-        }
+        // if (ss.fail())
+        //     enteredIndex = 0;
+        // else {
+        //     char remainingChar;
+        //     if (ss >> remainingChar)
+        //         enteredIndex = 0;
+        // }
 
-        if ((enteredIndex < 1 || enteredIndex > mNumContacts))
-            continue;
-        else
-            break;
+        
     }
 
     // int enteredIndex( 0 );

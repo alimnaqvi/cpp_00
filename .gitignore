@@ -4,6 +4,7 @@ a.out
 rough*
 test*
 .vscode
+.clang-format
 
 megaphone
 phonebook

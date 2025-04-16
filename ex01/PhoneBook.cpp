@@ -1,7 +1,8 @@
 #include "PhoneBook.h"
 
 PhoneBook::PhoneBook()
-    : mNumContacts( 0 ) {}
+    : mNumContacts{ 0 }
+{}
 
 void PhoneBook::addContact() {
     static int contactIndex;

@@ -1,8 +1,8 @@
-NAME = megaphone
+NAME = job
 CC = c++
 CFLAGS = -Wall -Wextra -Werror -std=c++17
 
-SRCS = megaphone.cpp
+SRCS = tests.cpp Account.cpp
 OBJS = $(SRCS:.cpp=.o)
 
 all: $(NAME)

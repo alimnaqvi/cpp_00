@@ -1,12 +1,11 @@
 #include "Contact.h"
 
 Contact::Contact()
-    : mFirstName("")
-    , mLastName("")
-    , mNickname("")
-    , mPhoneNumber("")
-    , mDarkestSecret("")
-{}
+    : mFirstName{ "" }
+    , mLastName{ "" }
+    , mNickname{ "" }
+    , mPhoneNumber{ "" }
+    , mDarkestSecret{ "" } {}
 
 void Contact::resetAllFields() {
     mFirstName     = "";
@@ -24,22 +23,22 @@ void Contact::printAllFields() {
     std::cout << "Darkest secret: " << mDarkestSecret << '\n';
 }
 
-void getFieldInput(const std::string& prompt, std::string& field) {
-    while (field == "") {
+void getFieldInput( const std::string& prompt, std::string& field ) {
+    while ( field == "" ) {
         std::cout << prompt;
-        if (!std::getline(std::cin >> std::ws, field)) {
+        if ( !std::getline( std::cin >> std::ws, field ) ) {
             std::cout << "\nEOF received (or input stream error). Exiting program." << std::endl;
-            std::exit(0);
+            std::exit( 0 );
         }
     }
 }
 
 void Contact::readUserInput() {
-    getFieldInput("Enter first name: ", mFirstName);
-    getFieldInput("Enter last name: ", mLastName);
-    getFieldInput("Enter nickname: ", mNickname);
-    getFieldInput("Enter phone number: ", mPhoneNumber);
-    getFieldInput("Enter darkest secret: ", mDarkestSecret);
+    getFieldInput( "Enter first name: ", mFirstName );
+    getFieldInput( "Enter last name: ", mLastName );
+    getFieldInput( "Enter nickname: ", mNickname );
+    getFieldInput( "Enter phone number: ", mPhoneNumber );
+    getFieldInput( "Enter darkest secret: ", mDarkestSecret );
 }
 
 const std::string& Contact::getFirstName() {

@@ -1,5 +1,8 @@
 # C++ Module 00: A Gentle Introduction
 
+[![C++ Programming](https://img.shields.io/badge/Language-C++-blue.svg)](https://en.wikipedia.org/wiki/C%2B%2B)
+[![Makefile](https://img.shields.io/badge/Build-Make-brightgreen.svg)](https://www.gnu.org/software/make/)
+
 This project is the first module in the C++ series of the 42 core curriculum. Its primary goal is to introduce fundamental concepts of C++ and Object-Oriented Programming (OOP), highlighting the key differences and advantages compared to the C programming language.
 
 This module covers essential building blocks necessary for subsequent C++ projects, focusing on classes, encapsulation, basic input/output handling, and the compilation process in C++.

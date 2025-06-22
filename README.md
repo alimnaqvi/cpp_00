@@ -24,6 +24,17 @@ This module provides practical experience with several core C++ features:
 *   **Command-Line Arguments:** Handling `argc` and `argv` in C++.
 *   **Basic Type Casting:** Using `static_cast`.
 
+## Learning Resources
+
+* [Variable assignment and initialization](https://www.learncpp.com/cpp-tutorial/variable-assignment-and-initialization/)
+* [Introduction to iostream: cout, cin, and endl](https://www.learncpp.com/cpp-tutorial/introduction-to-iostream-cout-cin-and-endl/)
+* [Introduction to type conversion and static_cast](https://www.learncpp.com/cpp-tutorial/introduction-to-type-conversion-and-static_cast/)
+* [Naming collisions and an introduction to namespaces](https://www.learncpp.com/cpp-tutorial/naming-collisions-and-an-introduction-to-namespaces/)
+* [Introduction to std::string](https://www.learncpp.com/cpp-tutorial/introduction-to-stdstring/)
+* [std::cin and handling invalid input](https://www.learncpp.com/cpp-tutorial/stdcin-and-handling-invalid-input/)
+* [**Chapter 14 - Introduction to Classes - LearnCpp.com**](https://www.learncpp.com/cpp-tutorial/introduction-to-object-oriented-programming/)
+* [**Chapter 15 - More on Classes - LearnCpp.com**](https://www.learncpp.com/cpp-tutorial/the-hidden-this-pointer-and-member-function-chaining/)
+
 ## Project Exercises
 
 This module consists of three exercises:

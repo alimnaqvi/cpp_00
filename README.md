@@ -32,8 +32,8 @@ This module provides practical experience with several core C++ features:
 * [Naming collisions and an introduction to namespaces](https://www.learncpp.com/cpp-tutorial/naming-collisions-and-an-introduction-to-namespaces/)
 * [Introduction to std::string](https://www.learncpp.com/cpp-tutorial/introduction-to-stdstring/)
 * [std::cin and handling invalid input](https://www.learncpp.com/cpp-tutorial/stdcin-and-handling-invalid-input/)
-* [**Chapter 14 - Introduction to Classes - LearnCpp.com**](https://www.learncpp.com/cpp-tutorial/introduction-to-object-oriented-programming/)
-* [**Chapter 15 - More on Classes - LearnCpp.com**](https://www.learncpp.com/cpp-tutorial/the-hidden-this-pointer-and-member-function-chaining/)
+* [**Chapter 14 - Introduction to Classes - LearnCpp.com**](https://www.learncpp.com/cpp-tutorial/introduction-to-object-oriented-programming/) (go through the entire chapter)
+* [**Chapter 15 - More on Classes - LearnCpp.com**](https://www.learncpp.com/cpp-tutorial/the-hidden-this-pointer-and-member-function-chaining/) (go through the entire chapter)
 
 ## Project Exercises
 

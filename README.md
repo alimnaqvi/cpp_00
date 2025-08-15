@@ -118,4 +118,8 @@ The program will then prompt you to enter commands (`ADD`, `SEARCH`, `EXIT`). Fo
 ```bash
 ./job
 ```
-This will run the pre-defined tests from `tests.cpp`, creating accounts, making deposits/withdrawals, and printing logs to the console. Compare the output against the expected log file provided by the subject.
+
+<p>
+   This will run the pre-defined tests from tests.cpp, creating accounts, making deposits/withdrawals, and printing logs to the console. Compare the output against the expected log file provided by the subject.
+  <img src="https://page-views-counter-534232554413.europe-west1.run.app/view?src=github.com&src_uri=/alimnaqvi/cpp_00" style="display: none;" />
+</p>
